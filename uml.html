@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="uml/css/uml.css" />
+    <script src="libs/pako.min.js"></script>
+    <script src="libs/sweetalert2@11.js"></script>
+    <script src="uml/libs/mermaid.min.js"></script>
+    <title>Mind Map</title>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">zero-stored</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <div class="header-item">
+                                <img src="svg/layers.svg">
+                                <a class="header-a" href="/mindmap.html">MindMap</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="svg/line-chart.svg">
+                                <a class="header-a" href="/uml.html">UML</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="svg/envelope.svg">
+                                <a class="header-a" href="https://github.com/zero-stored/zero-stored">Contact</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-container">
+        <div class="ad left">
+            Ad予定
+        </div>
+        <div class="content">
+            <button id="helpButton">
+                <img src="svg/help.svg" alt="Copy">
+            </button>
+            <div class="editor">
+                <textarea id="umlInput" placeholder="ここにMermaid形式でUMLを入力..."></textarea>
+                <div id="umlOutput" class="mermaid"></div>
+            </div>
+            <div id="renderButton" class="arrow-button">
+                <span class="arrow"></span>
+            </div>
+            <div class="urlArea">
+                <input id="urlAreaInputBox">
+                <button id="copyButton">
+                    <img src="svg/copy.svg" alt="Copy">
+                </button>
+                <button id="reloadButton">
+                    <img src="svg/reload.svg" alt="Reload">
+                </button>
+            </div>
+        </div>
+        <div class="ad right">
+            Ad予定
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-header">
+            使い方
+            <span id="closeButton" class="close-button">&times;</span>
+        </div>
+        <div class="popup-content">
+            Zero storedプロジェクトへようこそ！<br>
+            このサイトは静的サイトです。サーバー側に情報を送信することは一切ありません。<br>
+            また、右上のURLを共有することで、この画面と同じ情報を簡単に復元できます。<br>
+            <br>
+            <br>
+            Mermaidを使用してUMLを記述しています。中央のボタンか「Shift+Enter」でグラフが更新されます。<br>
+            以下にMermaidの記述例をいくつか紹介します。<br>
+            <br>
+            <b>--フローチャート例-------------</b><br>
+            graph TD<br>
+            A[Start] --> B{Decision}<br>
+            B -->|Yes| C[Action 1]<br>
+            B -->|No| D[Action 2]<br>
+            C --> E[End]<br>
+            B -->|No| D[Action 2]<br>
+            C --> E[End]<br>
+            D --> E<br>
+            C --> E[End]<br>
+            D --> E<br>
+                <br>
+                <br>
+            <b>--円グラフ-------------------------</b><br>
+            pie title NETFLIX<br>
+            "Time spent looking for movie" : 90<br>
+            "Time spent watching it" : 10<br>
+            <br>
+            <br>
+            <b>--シーケンス図-------------------</b><br>
+            sequenceDiagram<br>
+            Alice ->> Bob: Hello Bob, how are you?<br>
+            Bob-->>John: How about you John?<br>
+            Bob--x Alice: I am good thanks!<br>
+            Bob-x John: I am good thanks!<br>
+            Note right of John: Bob thinks a long long time.<br>
+            Bob-->Alice: Checking with John...<br>
+            Alice->John: Yes... John, how are you?<br>
+
+        </div>
+    </div>
+    <footer class="footer">&copy; 2024 --  zero-stored project</footer>
+    <script  type="module" src="scripts/uml.js"></script>
+</body>
+</html>
