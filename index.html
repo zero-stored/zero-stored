@@ -20,6 +20,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('mindmap-icon').addEventListener('click', function() { window.location.href = document.getElementById('mindmap-link').href; });
             document.getElementById('uml-icon').addEventListener('click', function() { window.location.href = document.getElementById('uml-link').href; });
+            document.getElementById('hash-icon').addEventListener('click', function() { window.location.href = document.getElementById('hash-link').href; });
+            document.getElementById('diff-icon').addEventListener('click', function() { window.location.href = document.getElementById('diff-link').href; });
+            document.getElementById('encoder-icon').addEventListener('click', function() { window.location.href = document.getElementById('encoder-link').href; });
+            document.getElementById('binary-icon').addEventListener('click', function() { window.location.href = document.getElementById('binary-link').href; });
         });
         </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6621204958275027"
@@ -37,19 +41,43 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <div class="header-item">
-                                <img src="svg/layers.svg">
-                                <a class="header-a" href="/mindmap.html">MindMap</a>
+                                <img src="/zero-stored/svg/layers.svg">
+                                <a class="header-a" href="/zero-stored/mindmap.html">MindMap</a>
                             </div>
                         </li>
                         <li>
                             <div class="header-item">
-                                <img src="svg/line-chart.svg">
-                                <a class="header-a" href="/uml.html">UML</a>
+                                <img src="/zero-stored/svg/line-chart.svg">
+                                <a class="header-a" href="/zero-stored/uml.html">UML</a>
                             </div>
                         </li>
                         <li>
                             <div class="header-item">
-                                <img src="svg/envelope.svg">
+                                <img src="/zero-stored/svg/hash.svg">
+                                <a class="header-a" href="/zero-stored/hash.html">Hash</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="/zero-stored/svg/arrow-horizontal.svg">
+                                <a class="header-a" href="/zero-stored/diff.html">Diff</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="/zero-stored/svg/shuffle.svg">
+                                <a class="header-a" href="/zero-stored/encode.html">Encoder</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="/zero-stored/svg/apps-alt.svg">
+                                <a class="header-a" href="/zero-stored/binary.html">BinaryEditor</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="/zero-stored/svg/envelope.svg">
                                 <a class="header-a" href="https://github.com/zero-stored/zero-stored">Contact</a>
                             </div>
                         </li>
@@ -64,17 +92,35 @@
             
         </div>
         <div class="content">
-            <h2>Zero stored プロジェクト</h2>
-            <p>社内LANなどで外部Webサービスが自由に使えない人や、他社を含むZoom会議でちゃんとした資料を作るのも大変だと思う人向け</p>
+            <h2>Zero stored</h2>
+            <p>社内LANなどで外部Webサービスが自由に使えない人や、他社を含むZoom会議でちゃんとした資料を作るのも面倒だと思う人向け</p>
             <p>githubの静的サービスを利用していて、サーバに情報を送らずブラウザ上だけで完結しています。</p>
-            <div class="link-container">
+            <div class="link-container-top">
                 <div class="link-item">
-                    <img id="mindmap-icon" class="icon" src="svg/gray-layers.svg">
-                    <a id="mindmap-link" class="link" href="/mindmap.html">MindMap</a>
+                    <img id="mindmap-icon" class="icon" src="/zero-stored/svg/gray-layers.svg">
+                    <a id="mindmap-link" class="link" href="/zero-stored/mindmap.html">MindMap</a>
                 </div>
                 <div class="link-item">
-                    <img id="uml-icon" class="icon" src="svg/gray-line-chart.svg">
-                    <a id="uml-link" class="link" href="/uml.html">UML</a>
+                    <img id="uml-icon" class="icon" src="/zero-stored/svg/gray-line-chart.svg">
+                    <a id="uml-link" class="link" href="/zero-stored/uml.html">UML</a>
+                </div>
+                <div class="link-item">
+                    <img id="hash-icon" class="icon" src="/zero-stored/svg/gray-hash.svg">
+                    <a id="hash-link" class="link" href="/zero-stored/hash.html">Hash</a>
+                </div>
+            </div>            
+            <div class="link-container-bottom">
+                <div class="link-item">
+                    <img id="diff-icon" class="icon" src="/zero-stored/svg/gray-swap-horizontal.svg">
+                    <a id="diff-link" class="link" href="/zero-stored/diff.html">Diff</a>
+                </div>
+                <div class="link-item">
+                    <img id="encoder-icon" class="icon" src="/zero-stored/svg/gray-shuffle.svg">
+                    <a id="encoder-link" class="link" href="/zero-stored/encode.html">Encoder</a>
+                </div>
+                <div class="link-item">
+                    <img id="binary-icon" class="icon" src="/zero-stored/svg/gray-apps-alt.svg">
+                    <a id="binary-link" class="link" href="/zero-stored/binary.html">BinaryEditor</a>
                 </div>
             </div>
         </div>
@@ -82,6 +128,6 @@
             
         </div>
     </div>
-    <footer class="footer">&copy; 2024 --  zero-stored project</footer>
+    <footer class="footer">&copy; 2025 --  zero-stored project</footer>
 </body>
 </html>

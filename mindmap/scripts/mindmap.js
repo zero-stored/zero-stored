@@ -336,7 +336,6 @@ window.onload = function() {
         const x = parseInt(inputBox.dataset.x);
         const y = parseInt(inputBox.dataset.y);
         const base_id = tmpId == 0 ? id : tmpId ;
-        console
         if (text) {
             ctx.font = '32px Arial';
             const textMetrics = ctx.measureText(text);
@@ -458,7 +457,6 @@ window.onload = function() {
         const url = new URL(urlInputBox.value);
         const params = new URLSearchParams(url.search);
         if (params.has('data')) {
-            console.info(params.get('data'));
             const datas = decompressJson(params.get('data'));
             id = datas.id;
             texts = datas.texts;

@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 - zero-stored project
+Copyright (c) 2025 - zero-stored project
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -35,3 +35,19 @@ This software makes use of the following third-party libraries, which are also l
    - Source: https://cdn.jsdelivr.net/npm/picojs@2.0.3/dist/pico.min.js
    - License: MIT License  
      Refer to the LICENSE file included in the Pico.js project repository for the exact terms.
+
+3. **crypto**  
+   - Source: https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js
+   - License: MIT License  
+     Refer to the LICENSE file included in the crypto.js project repository for the exact terms.
+
+4. **base32**  
+   - Source: https://github.com/agnoster/base32-js
+   - License: MIT License  
+     Refer to the LICENSE file included in the base32 project repository for the exact terms.
+
+
+5. **base58**  
+   - Source: https://github.com/pur3miish/base58-js
+   - License: MIT License  
+     Refer to the LICENSE file included in the base58 project repository for the exact terms.

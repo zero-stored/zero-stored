@@ -18,7 +18,7 @@
     <script src="libs/sweetalert2@11.js"></script>
     <script src="uml/libs/mermaid.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6621204958275027" crossorigin="anonymous"></script>
-    <title>Mind Map</title>
+    <title>UML</title>
 </head>
 <body>
     <div class="header">
@@ -31,19 +31,43 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <div class="header-item">
-                                <img src="svg/layers.svg">
-                                <a class="header-a" href="/mindmap.html">MindMap</a>
+                                <img src="/zero-stored/svg/layers.svg">
+                                <a class="header-a" href="/zero-stored/mindmap.html">MindMap</a>
                             </div>
                         </li>
                         <li>
                             <div class="header-item">
-                                <img src="svg/line-chart.svg">
-                                <a class="header-a" href="/uml.html">UML</a>
+                                <img src="/zero-stored/svg/line-chart.svg">
+                                <a class="header-a" href="/zero-stored/uml.html">UML</a>
                             </div>
                         </li>
                         <li>
                             <div class="header-item">
-                                <img src="svg/envelope.svg">
+                                <img src="/zero-stored/svg/hash.svg">
+                                <a class="header-a" href="/zero-stored/hash.html">Hash</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="/zero-stored/svg/arrow-horizontal.svg">
+                                <a class="header-a" href="/zero-stored/diff.html">Diff</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="/zero-stored/svg/shuffle.svg">
+                                <a class="header-a" href="/zero-stored/encode.html">Encoder</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="/zero-stored/svg/apps-alt.svg">
+                                <a class="header-a" href="/zero-stored/binary.html">BinaryEditor</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header-item">
+                                <img src="/zero-stored/svg/envelope.svg">
                                 <a class="header-a" href="https://github.com/zero-stored/zero-stored">Contact</a>
                             </div>
                         </li>
@@ -52,7 +76,6 @@
             </div>
         </div>
     </div>
-    
     <div class="main-container">
         <div class="ad left">
             
@@ -61,8 +84,26 @@
             <button id="helpButton">
                 <img src="svg/help.svg" alt="Copy">
             </button>
+            <div class="sample-uml-area">
+                sample:
+                <a id="flowButton">flow</a>
+                <a id="sequenceButton">sequence</a>
+                <a id="classButton">class</a>
+                <a id="stateButton">state</a>
+                <a id="ERButton">ER</a>
+                <a id="ganttButton">gantt</a>
+                <a id="journeyButton">journey</a>
+                <a id="gitButton">git</a>
+                <a id="pieButton">pie</a>
+                <a id="quadrantButton">quadrant</a>
+                <a id="packetButton">packet</a>
+            </div>
+            <button id="downloadButton">
+                <img src="svg/download.svg" alt="Download">
+                <span>download svg</span>
+            </button>
             <div class="editor">
-                <textarea id="umlInput" placeholder="ここにMermaid形式でUMLを入力..."></textarea>
+                <textarea id="umlInput" placeholder="ここにMermaid形式でUMLを入力..." spellcheck="false"></textarea>
                 <div id="umlOutput" class="mermaid"></div>
             </div>
             <div id="renderButton" class="arrow-button">
@@ -94,40 +135,9 @@
             <br>
             <br>
             Mermaidを使用してUMLを記述しています。中央のボタンか「Shift+Enter」でグラフが更新されます。<br>
-            以下にMermaidの記述例をいくつか紹介します。<br>
-            <br>
-            <b>--フローチャート例-------------</b><br>
-            graph TD<br>
-            A[Start] --> B{Decision}<br>
-            B -->|Yes| C[Action 1]<br>
-            B -->|No| D[Action 2]<br>
-            C --> E[End]<br>
-            B -->|No| D[Action 2]<br>
-            C --> E[End]<br>
-            D --> E<br>
-            C --> E[End]<br>
-            D --> E<br>
-                <br>
-                <br>
-            <b>--円グラフ-------------------------</b><br>
-            pie title NETFLIX<br>
-            "Time spent looking for movie" : 90<br>
-            "Time spent watching it" : 10<br>
-            <br>
-            <br>
-            <b>--シーケンス図-------------------</b><br>
-            sequenceDiagram<br>
-            Alice ->> Bob: Hello Bob, how are you?<br>
-            Bob-->>John: How about you John?<br>
-            Bob--x Alice: I am good thanks!<br>
-            Bob-x John: I am good thanks!<br>
-            Note right of John: Bob thinks a long long time.<br>
-            Bob-->Alice: Checking with John...<br>
-            Alice->John: Yes... John, how are you?<br>
-
         </div>
     </div>
-    <footer class="footer">&copy; 2024 --  zero-stored project</footer>
+    <footer class="footer">&copy; 2025 --  zero-stored project</footer>
     <script  type="module" src="uml/scripts/uml.js"></script>
 </body>
 </html>

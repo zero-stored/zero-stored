@@ -69,8 +69,13 @@ body, html {
     position: relative;
 }
 
-.link-container {
-    padding-top: 200px;
+.link-container-top {
+    padding-top: 100px;
+    display: flex;
+    gap: 50px; 
+}
+.link-container-bottom {
+    padding-top: 10px;
     display: flex;
     gap: 50px; 
 }
