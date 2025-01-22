@@ -8,7 +8,7 @@ window.onload = function() {
     const findHexInputBox = document.getElementById('findHexInputBox');
     const findTextInputBox = document.getElementById('findTextInputBox');
     const findWord = document.getElementById('findWord');
-    const MAX_FILE_SIZE = 256 * 1024; // 256KB
+    const MAX_FILE_SIZE = 10*1024 * 1024; // 256KB
     
     let mode = 'overwrite';
     let selectId = '';
@@ -18,6 +18,8 @@ window.onload = function() {
     const popup = document.getElementById('popup');
     document.getElementById('helpButton').addEventListener('click', function() { popup.style.display = 'block'; });
     document.getElementById('closeButton').addEventListener('click', function() { popup.style.display = 'none'; });
+    const loadingPopup = document.getElementById('loadingPopup');
+
     let bytes = new Uint8Array(0);
     let filename = '';
    
@@ -83,25 +85,39 @@ window.onload = function() {
         binAscii.style.height = binContainer.scrollHeight+'px';
     }
 
-    window.addEventListener('drop', (event) => {
+    function asyncMakeEditor(){
+        return new Promise((resolve, reject) => {
+            try {
+                makeEditor();
+                resolve();         
+            } catch (error) {
+                reject(error);
+            }
+        });
+    }   
+
+    window.addEventListener('drop', async function(event) {
         event.preventDefault();
         const file = event.dataTransfer.files[0];
         if (file.size > MAX_FILE_SIZE) {
           swal.fire({
               title: 'error',
-              text :`File "${file.name}" is too large. Maximum size is 256KB.To be supported in the future`,
+              text :`File "${file.name}" is too large. Maximum size is 10MB.To be supported in the future`,
               icon: "error"
               });
           return;
         }
         filename = file.name;
         const reader = new FileReader();
-        reader.onload = (e) => {
+        reader.onload = async function(e) {
             const arrayBuffer = e.target.result;
             bytes = new Uint8Array(arrayBuffer);
-            makeEditor();
+            loadingPopup.style.display = 'block';
+            await new Promise(resolve => setTimeout(resolve, 100))
+            await asyncMakeEditor();
+            loadingPopup.style.display = 'none';
         };
-        reader.readAsArrayBuffer(file);
+        await reader.readAsArrayBuffer(file);
     });
     toggleButton.addEventListener('click', toggleMode);
     function toggleMode() {
@@ -142,13 +158,13 @@ window.onload = function() {
           }
     });
 
-    function deleteByte(){
+    async function deleteByte(){
         const insertIndex = selectId.replace("bin-",'');
         const newArray = new Uint8Array(bytes.length - 1);
         newArray.set(bytes.slice(0, insertIndex), 0);
         newArray.set(bytes.slice(parseInt(insertIndex)+1),parseInt(insertIndex));
         bytes = newArray;    
-        makeEditor();
+        await makeEditor();
         inputIndex = 0;
         if(insertIndex >= bytes.length-1) {
             selectId = "bin-" + (bytes.length-1);
@@ -218,7 +234,7 @@ window.onload = function() {
         }
     }
 
-    function editInsert(key){
+    async function editInsert(key){
         const insertIndex = selectId.replace("bin-",'');
         if(inputIndex == 0){
             const newArray = new Uint8Array(bytes.length + 1);
@@ -232,7 +248,7 @@ window.onload = function() {
             targetByte = parseInt(targetByte <<4) + parseInt(key, 16);
             bytes[insertIndex] = targetByte;
         }
-        makeEditor();
+        await makeEditor();
         inputIndex++;
         if(inputIndex == 2){
             inputIndex = 0;

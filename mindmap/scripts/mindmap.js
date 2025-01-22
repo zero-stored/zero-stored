@@ -450,7 +450,7 @@ window.onload = function() {
 
     function updateURL(){
         const datas = {id,texts,lines,elipses};
-        urlInputBox.value = 'https://zero-stored.net/mindmap.html?data=' + compressJson(datas);
+        urlInputBox.value = 'https://zero-stored.github.io/zero-stored/mindmap.html?data=' + compressJson(datas);
     }
 
     function setURL(){

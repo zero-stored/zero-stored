@@ -148,7 +148,7 @@ window.onload = async function() {
 
     function updateURL(){
         const datas = umlInput.value;
-        urlInputBox.value = 'https://zero-stored.net/uml.html?data=' + compressText(datas);
+        urlInputBox.value = 'https://zero-stored.github.io/zero-stored/uml.html?data=' + compressText(datas);
     }
 
     async function setURL(){
