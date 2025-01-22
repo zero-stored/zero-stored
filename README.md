@@ -7,4 +7,10 @@ githubの静的サービスを利用していて、サーバに情報を送ら�
 そのうえで復元するURLを作成しています、そのため作成したマインドマップやUMLの共有も簡単にできます。
 さらに複数のツールを用意しています
 
-＠2025　機能/広告　追加予定
+[home](https://zero-stored.github.io/zero-stored)
+[Mindmap](https://zero-stored.github.io/zero-stored/mindmap.html)
+[uml tool](https://zero-stored.github.io/zero-stored/uml.html)
+[hash tool](https://zero-stored.github.io/zero-stored/hash.html)
+[diff tool](https://zero-stored.github.io/zero-stored/diff.html)
+[encode tool](https://zero-stored.github.io/zero-stored/encode.html)
+[binary editor](https://zero-stored.github.io/zero-stored/binary.html)
