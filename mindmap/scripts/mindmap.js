@@ -46,7 +46,7 @@ window.onload = function() {
             radialMenu.style.left = `${x - 100 - canvasOffsetX}px`;
             radialMenu.style.top = `${y - 100 - canvasOffsetY}px`;
             radialMenu.style.display = 'block';
-        }, 300); // 長押しの判定時間
+        }, 200); // 長押しの判定時間
 
         mouseDownTime = new Date().getTime();
         startX = e.clientX;
