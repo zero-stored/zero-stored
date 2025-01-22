@@ -317,9 +317,11 @@ window.onload = function() {
             findWord.textContent = hexArray;
         } else if(findHexInputBox.value == '') {
             findWord.textContent = '';
+            findHex([]);
         }
         else{
             findWord.textContent = 'Invalid input.';
+            findHex([]);
         }
     });
     function findText(text){
