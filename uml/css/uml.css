@@ -77,11 +77,11 @@ textarea {
     height: 100%;
     padding: 10px;
     box-sizing: border-box;
-    border-left: 1px solid #ccc;
+    border: 1px solid #ccc;
     overflow: auto;
-
     display: flex;
     justify-content: center; 
+    z-index: 0;
 }
 
 .arrow-button {
@@ -191,7 +191,27 @@ textarea {
     border: none;
     bottom: 5%;
     right: 5%;
+    z-index: 1;
 }
+#zoomInButton
+{
+    position: absolute;
+    background-color: white;
+    border: none;
+    bottom: 25%;
+    right: 2%;
+    z-index: 1;
+}
+#zoomOutButton
+{
+    position: absolute;
+    background-color: white;
+    border: none;
+    bottom: 15%;
+    right: 2%;
+    z-index: 1;
+}
+
 
 .urlArea {
     position: absolute;

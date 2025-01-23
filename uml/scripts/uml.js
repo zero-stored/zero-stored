@@ -11,6 +11,10 @@ window.onload = async function() {
     const popup = document.getElementById('popup');
     document.getElementById('helpButton').addEventListener('click', function() { popup.style.display = 'block'; });
     document.getElementById('closeButton').addEventListener('click', function() { popup.style.display = 'none'; });
+   
+    let scale = 1;
+    let isDragging = false;
+    let startX, startY;
     
     const flowButton = document.getElementById('flowButton')
     const sequenceButton = document.getElementById('sequenceButton')
@@ -168,6 +172,41 @@ window.onload = async function() {
             graphDefinition = umlInput.value.replace(/\r\n|\r/g, '\n').trim();
             await renderMermaidGraph();
         }
+    });
+
+    document.getElementById('zoomInButton').addEventListener('click', () => {
+        const svgElement = graphContainer.querySelector('svg');
+        scale += 0.2;
+        svgElement.style.transform = `scale(${scale})`;
+        svgElement.style.transformOrigin = '0 0';
+    });
+
+    document.getElementById('zoomOutButton').addEventListener('click', () => {
+        const svgElement = graphContainer.querySelector('svg');
+        scale -= 0.2;
+        svgElement.style.transform = `scale(${scale})`;
+        svgElement.style.transformOrigin = '0 0';
+    });
+
+    graphContainer.addEventListener('mousedown', (event) => {
+        isDragging = true;
+        startX = event.clientX;
+        startY = event.clientY;
+    });
+
+    graphContainer.addEventListener('mousemove', (event) => {
+        if (isDragging) {
+            graphContainer.scrollLeft += (startX - event.clientX) /scale;
+            graphContainer.scrollTop += (startY - event.clientY) /scale;
+        }
+    });
+
+    graphContainer.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    graphContainer.addEventListener('mouseleave', () => {
+        isDragging = false;
     });
 
     async function init(){
