@@ -77,7 +77,6 @@ textarea {
     height: 100%;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
     overflow: auto;
     display: flex;
     justify-content: center; 
