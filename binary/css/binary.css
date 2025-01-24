@@ -63,7 +63,7 @@ body, html {
     font-family: 'Courier New', Courier, monospace;
     justify-content: center;
     text-align: center;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .bin-address {
@@ -115,8 +115,8 @@ body, html {
 }
 
 .ascii {
-    padding-left:2px;
-    padding-right:2px;
+    padding-left:4px;
+    padding-right:4px;
     white-space: pre;
     font-family: monospace; 
 }
